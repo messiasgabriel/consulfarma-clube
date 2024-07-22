@@ -27,6 +27,9 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Install dependencies
         run: pnpm install
 
@@ -48,7 +51,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
-          name: github-pages
+          name: artifact
           path: './dist'
 
       - name: Deploy to GitHub Pages
